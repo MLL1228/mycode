@@ -24,7 +24,8 @@ def quicksort(nums, left, right):
         quicksort(nums, key_index+1, right)
 
 
-nums = [5, 6, 3, 9, 10, 2, 7, 1, 4]
+# nums = [5, 6, 3, 9, 10, 2, 7, 1, 4]
+nums = []
 print (nums)
 quicksort(nums, 0, len(nums)-1)
 print (nums)
