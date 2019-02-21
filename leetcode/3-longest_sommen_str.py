@@ -1,3 +1,4 @@
+
 class Solution:
     def longestCommonPrefix(self, strs):
         """
@@ -14,6 +15,7 @@ class Solution:
 
         for each_str in strs:
             min_length = min(min_length, len(each_str))
+            print(min_length)
 
         for i in range(min_length):   # 以最短字符串为标准，逐个取出字符比较
             # print(strs[0][i])
@@ -29,7 +31,7 @@ class Solution:
         return prefix
 
 s1 = Solution()
-mylist = []
+mylist = "134"
 res = s1.longestCommonPrefix(mylist)
 print(res)
 
