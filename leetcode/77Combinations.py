@@ -44,35 +44,32 @@ class Solution(object):
         :rtype: List[List[int]]
         """
 
+        res_list = []
+        temp_list = []
+        self.find_next_ele(temp_list, res_list, 1, n, k)
+        # print(res_list)
+        return res_list
 
-        for i in range(n):
-            temp_list = []
-            temp_list.append(i+1)
+        # for i in range(n):
+        #     temp_list = []
+        #     temp_list.append(i+1)
 
-
-
-
-
-    def find_next_ele(self, temp_list, n, k):
+    def find_next_ele(self, temp_list, res_list, start, n, k):
         length = len(temp_list)
-        max_num = max(temp_list)
-        if length < k:
-            for i in range(max_num, n+1):
-                temp_list.append(max_num+1)
-
-
-
-
-
-
-
-
-
+        if length == k:
+            res_list.append(copy.deepcopy(temp_list))
+            return
+        elif length < k:
+            # max_num = max(temp_list)
+            for i in range(start, n+1):
+                temp_list.append(i)
+                self.find_next_ele(temp_list, res_list, i+1, n, k)
+                temp_list.pop()
 
 
 
 s = Solution()
-print(s.combine(4, 3))
+print(s.combine(4, 2))
 
 
 
