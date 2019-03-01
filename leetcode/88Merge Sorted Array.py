@@ -8,21 +8,14 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums1 in-place instead.
         """
 
-        # 进行二分查找，插在返回值的右侧
+        # 对 nums2 里的每一个元素，在 nums1 里面进行二分查找，返回索引值，插在返回值的右侧
 
         for i in range(len(nums2)):
             index = self.binary_search(nums1, m+i, nums2[i])
-            # if index == -1:
-            #     for i in range(len(nums2)):
-            #         nums1[i] = nums2[i]
-            #     break
-            # print(index)
 
             for j in range(m+i, index, -1):
                 nums1[j] = nums1[j-1]
-            # if index == 0 and nums1[0] > nums2[i]:
-            #     nums1[index] = nums2[i]
-            # else:
+
             nums1[index+1] = nums2[i]
             print(nums1)
 
@@ -37,24 +30,7 @@ class Solution(object):
                 return i - 1
         else:
             return m-1
-        # left = 0
-        # mid = 0
-        # right = m-1
-        # print(left, right)
-        # if left > right:
-        #     return -1
-        #
-        # while left < right:
-        #     mid = (left + right)//2
-        #     print(mid)
-        #     if nums[mid] == target:
-        #         return mid
-        #     elif nums[mid] > target:
-        #         right = mid-1
-        #     elif nums[mid] < target:
-        #         left = mid+1
-        # else:
-        #     return mid
+
 
 
 
