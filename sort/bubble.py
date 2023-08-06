@@ -1,6 +1,6 @@
 def bubbleSort(arr):
     for i in range(1, len(arr)):
-        print('num:   ', i)
+        print('第 %s 次循环' % i)
         for j in range(0, len(arr)-i):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
