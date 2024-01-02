@@ -48,15 +48,16 @@
 #             self.find_res(temp_list, next+1, now_k+1, k, res_list, nums, length, target-i)
 #             temp_list.pop()
 
+
 class Solution:
-    def threeSum(self, nums):
+    def threeSum(self, nums: list):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
 
         self.quicksort(nums, 0, len(nums)-1)
-        # result_list = []
+        result_list = []
         if len(nums) < 3:
             return result_list
         for i in range(len(nums)-1):
@@ -82,7 +83,6 @@ class Solution:
                             lastp = nums[p]
                             p += 1
                         else:
-                            return [nums[i], nums[p], nums[q]]
                             result_list.append([nums[i], nums[p], nums[q]])
                             lastp = nums[p]
                             lastq = nums[q]
@@ -92,7 +92,6 @@ class Solution:
                     elif nums[q] == lastq:
                         q -= 1
 
-        return result_list
 
     def partition(self, nums, left, right):
         key = nums[left]

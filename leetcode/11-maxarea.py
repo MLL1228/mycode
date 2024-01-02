@@ -14,6 +14,7 @@
 #                     max_area = area
 #         return max_area
 
+
 class Solution:
     def maxArea(self, height):
         """
@@ -38,11 +39,11 @@ class Solution:
         return max_area
 
 
-
-
-
 if __name__ == '__main__':
     arr = [1,8,6,2,5,4,8,3,7]
     obj = Solution()
     res = obj.maxArea(arr)
     print(res)
+
+
+

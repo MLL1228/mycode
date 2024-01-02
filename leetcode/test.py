@@ -8,5 +8,8 @@ class Solution:
 
 if __name__ == '__main__':
         solution = Solution()
-        result = solution.two_sum([3, 3, 1], 6)
+        result = solution.two_sum([3, 3], 6)
         print(result)
+
+
+

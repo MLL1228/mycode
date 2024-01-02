@@ -1,4 +1,4 @@
-def bubbleSort(arr):
+def bubble_sort(arr):
     for i in range(1, len(arr)):
         print('第 %s 次循环' % i)
         for j in range(0, len(arr)-i):
@@ -8,7 +8,10 @@ def bubbleSort(arr):
         print('finish: ', arr)
     return arr
 
-myarray = [1, 6, 0, 4, 2]
 
-res = bubbleSort(myarray)
+myarray = [1, 2, 6, 0, 4, 2, 3]
+
+res = bubble_sort(myarray)
 print(res)
+
+

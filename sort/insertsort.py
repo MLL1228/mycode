@@ -1,45 +1,46 @@
-def insertSort( arr ):
-    length = len(arr)
-    for i in range(1, length):
-        x = arr[i]
-        for j in range(i, -1, -1):
-            # j为当前位置，试探j-1位置
-            # 如果当前数较小，插入到前面
-            if x < arr[j-1]:
-                print(j, arr[j-1])
-                arr[j] = arr[j-1]
+# def insert_sort(arr):
+#     length = len(arr)
+#     for i in range(1, length):
+#         print("i为 %s" % i)
+#         for j in range(i, 0, -1):
+#             # j为当前位置，试探j-1位置
+#             # 如果当前数较小，插入到前面
+#             if arr[j] < arr[j-1]:
+#                 print("前移交换 %s 给 %s" % (arr[j - 1], arr[j]))
+#                 arr[j], arr[j-1] = arr[j-1], arr[j]
+#                 print(arr)
+#             else:
+#                 # 没有进行交换，说明现在的位置是对的
+#                 break
+#
+#
+# def print_arr(arr):
+#     for item in arr:
+#         print(item)
+#
+#
+# arr = [4, 3, 7, 8, 4, 4, 5]
+# insert_sort(arr)
+# print(arr)
 
+
+def insertsort(arr):  #参数的传入，当想传入的是一个list时，直接传入一个变量就行了
+    """
+    从index 1 位置开始，该位置元素同前一元素比较。 比前一元素大的话进行交换
+    再从index 2 位置开始比较， 2和1比较，1和0比较。 2和1比较时如果没有交换位置，则可以直接break，因为2比1大且上一轮排序保证了1一定比0大，所以2所在的位置是正确的
+    ...
+    :param arr:
+    :return:
+    """
+    for i in range(len(arr)-1):
+        for e_index in range(i+1, 0, -1):
+            if arr[e_index] < arr[e_index-1]:
+                arr[e_index], arr[e_index-1] = arr[e_index-1], arr[e_index]
             else:
-                # 位置确定为j
                 break
+    return arr
 
-        arr[j] = x
-        print(arr)
 
-def printArr(arr):
-    for item in arr:
-        print(item)
-arr = [4, 3, 7 ,8 ,4 , 4 ,5]
-insertSort(arr)
-# printArr(arr)
-print(arr)
-
-#
-# def inertsort(l):  #参数的传入，当想传入的是一个list时，直接传入一个变量就行了
-#     N=len(l)
-#     for x in range(1,N):
-#         a,b=x,x
-#         n=l[x]
-#         while n<l[a-1] and a-1>=0:
-#             a=a-1
-#             if a-1<0:
-#                 a=0
-#         while b>a:
-#             l[b]=l[b-1]
-#             b=b-1
-#         l[a]=n
-#
-# l=[1,3,2,8,5,3,1]
-# inertsort(l)
-# print (l)
+l=[1,3,2,8,5,3,1]
+print(insertsort(l))
 

@@ -1,5 +1,4 @@
 def insertsort(nums):
-    print('111')
     length = len(nums)
     for i in range(1, length):
         key = nums[i]
